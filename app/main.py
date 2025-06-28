@@ -49,6 +49,7 @@ async def lifespan(app: FastAPI):
         version=settings.VERSION,
         api_prefix=settings.API_V1_STR,
     )
+    print("🚩 DATABASE_URL at runtime:", os.environ.get("DATABASE_URL"))
     yield
     logger.info("application_shutdown")
 
